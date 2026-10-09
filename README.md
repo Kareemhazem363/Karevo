@@ -38,8 +38,8 @@ A modern e-commerce web app for clothing and accessories, built with **Next.js 1
 ### Installation
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/Kareemhazem363/Freshcart_E-Commerce.git
+cd Freshcart_E-Commerce
 npm install
 ```
 
