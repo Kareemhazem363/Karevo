@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Karevo
+
+A modern e-commerce web app for clothing and accessories, built with **Next.js 15**, **React 19**, **TypeScript** and **Tailwind CSS v4**. It was developed as the final project of the Route Front-End Diploma, and it talks to the public [Route E-commerce API](https://ecommerce.routemisr.com).
+
+**Live demo:** _add your Vercel link here_
+
+## Features
+
+- **Authentication**: register and sign in with email and password using NextAuth (Credentials provider), with the session kept in a JWT.
+- **Product browsing**: home page with a hero slider and promo banners, a products page, product details, search, categories (with sub-categories) and brands.
+- **Shopping cart**: add, update quantity, remove items and clear the cart.
+- **Wishlist**: save products to a personal wishlist.
+- **Checkout**: choose a shipping address, then pay by **cash on delivery** or **online** (an online payment session created through the API).
+- **Orders**: view your order history.
+- **Profile**: manage saved addresses and account settings.
+- **Responsive UI**: designed to work on mobile, tablet and desktop, with toast notifications and loading states.
+
+## Tech Stack
+
+| Area | Tools |
+| --- | --- |
+| Framework | Next.js 15 (App Router), React 19, TypeScript |
+| Styling | Tailwind CSS v4, shadcn/ui (Base UI), lucide-react, react-icons |
+| Data and state | TanStack Query, Next.js Server Actions |
+| Forms and validation | React Hook Form, Zod |
+| Auth | NextAuth.js v4 |
+| UI extras | Swiper, AOS, react-hot-toast, react-spinners |
+| Fonts | Poppins and Playfair Display (`next/font`) |
+| Deployment | Vercel |
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18 or newer
+- npm
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file in the project root:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+API=https://ecommerce.routemisr.com
+NEXTAUTH_SECRET=your_long_random_secret
+NEXTAUTH_URL=http://localhost:3000
+```
 
-## Learn More
+Generate a secret with `openssl rand -base64 32` or any long random string. Never commit this file.
 
-To learn more about Next.js, take a look at the following resources:
+### Run the app
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run dev      # development server at http://localhost:3000
+npm run build    # production build
+npm run start    # run the production build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/
+│   ├── (auth)/            # Login and Register
+│   ├── actions/           # Server Actions (auth, cart, wishlist, ...)
+│   ├── _apis/             # API helpers
+│   ├── _components/       # Navbar, Slider, Cart, Wishlist, Logo, ...
+│   ├── products/ productDetails/ categories/ brands/
+│   ├── cart/ wishlist/ checkout/ orders/
+│   ├── profile/           # addresses and settings
+│   ├── about/ contact/
+│   └── layout.tsx
+├── Footer/
+└── assets/                # images
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Products, categories, brands, carts, wishlists and orders are served by the Route API, so the data lives on its server and is tied to each user's account.
+- No real payments are processed. This is a training project.
+
+## Author
+
+**Kareem Hazem**: Computer Science student, Ain Shams University.
+
+- GitHub: [@Kareemhazem363](https://github.com/Kareemhazem363)
