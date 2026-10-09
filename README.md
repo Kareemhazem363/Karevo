@@ -50,7 +50,7 @@ Create a `.env.local` file in the project root (note the trailing slash in `API`
 ```env
 API=https://ecommerce.routemisr.com/api/v1/
 NEXTAUTH_SECRET=your_long_random_secret
-NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL=https://karevo-eight.vercel.app
 ```
 
 Generate a secret with `openssl rand -base64 32` or any long random string. Never commit this file.
