@@ -38,8 +38,8 @@ A modern e-commerce web app for clothing and accessories, built with **Next.js 1
 ### Installation
 
 ```bash
-git clone https://github.com/Kareemhazem363/Freshcart_E-Commerce.git
-cd Freshcart_E-Commerce
+git clone https://github.com/Kareemhazem363/Karevo.git
+cd Karevo
 npm install
 ```
 
