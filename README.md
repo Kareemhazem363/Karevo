@@ -45,10 +45,10 @@ npm install
 
 ### Environment variables
 
-Create a `.env.local` file in the project root:
+Create a `.env.local` file in the project root (note the trailing slash in `API`):
 
 ```env
-API=https://ecommerce.routemisr.com
+API=https://ecommerce.routemisr.com/api/v1/
 NEXTAUTH_SECRET=your_long_random_secret
 NEXTAUTH_URL=http://localhost:3000
 ```
