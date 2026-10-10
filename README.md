@@ -58,7 +58,7 @@ Generate a secret with `openssl rand -base64 32` or any long random string. Neve
 ### Run the app
 
 ```bash
-npm run dev      # development server at http://localhost:3000
+npm run dev      # development server at https://karevo-eight.vercel.app
 npm run build    # production build
 npm run start    # run the production build
 ```
